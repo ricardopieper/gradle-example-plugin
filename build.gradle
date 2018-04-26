@@ -1,0 +1,24 @@
+
+plugins {
+    id 'com.gradle.plugin-publish' version '0.9.7' 
+}
+group = 'org.ricardo.example.plugin' 
+apply plugin : 'java'
+version = '1.0'
+
+dependencies {
+    compileOnly gradleApi()
+}
+
+pluginBundle { 
+    website = 'https://github.com/ricardopieper/gradle-example-plugin' 
+    vcsUrl = 'https://github.com/ricardopieper/gradle-example-plugin' 
+    plugins {
+        greetingsPlugin {  
+            id = 'org.ricardo.example.plugin' 
+            displayName = 'Minimal Gradle Plugin' 
+            description = 'A minimal example on how to make plugins for Gradle' 
+            tags = ['gradle', 'plugin', 'example', 'tutorial']
+        }
+    }
+}
